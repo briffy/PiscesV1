@@ -1,1 +1,3 @@
 # PiscesV1
+
+Probably shouldn't touch this yet unless you 100% know what you're doing...
