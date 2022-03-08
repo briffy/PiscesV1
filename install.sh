@@ -94,6 +94,7 @@ systemctl daemon-reload
 mkdir /home/pi/dashboard
 mkdir /home/pi/configs
 mkdir /home/pi/database
+mkdir /home/pi/logs
 
 chown -R root:root /home/pi/dashboard
 chmod -R 775 /home/pi/dashboard
