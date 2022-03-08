@@ -34,8 +34,27 @@ systemctl disable update-miner-check.timer
 systemctl disable wifi-check.timer
 systemctl disable wifi-config-check.timer
 systemctl disable wifi-service-check.timer
+systemctl disable auto-maintain.service
+systemctl disable auto-maintain.timer
+systemctl disable auto-update.service
+systemctl disable auto-update.timer
+systemctl disable bt-check.service
+systemctl disable clear-blockchain-check.service
+systemctl disable clear-blockchain-check.timer
+systemctl disable install-dashboard.service
+systemctl disable vpn-check.service
+systemctl disable vpn-check.timer
 
+rm -rf /etc/systemd/system/auto-maintain.service
+rm -rf /etc/systemd/system/auto-maintain.timer
+rm -rf /etc/systemd/system/auto-update.service
+rm -rf /etc/systemd/system/auto-update.timer
+rm -rf /etc/systemd/system/bt-check.service
 rm -rf /etc/systemd/system/bt-check.timer
+rm -rf /etc/systemd/system/clear-blockchain-check.service
+rm -rf /etc/systemd/system/clear-blockchain-check.timer
+rm -rf /etc/systemd/system/vpn-check.service
+rm -rf /etc/systemd/system/vpn-check.timer
 rm -rf /etc/systemd/system/bt-service-check.service
 rm -rf /etc/systemd/system/bt-service-check.timer
 rm -rf /etc/systemd/system/clear-blockchain.timer
