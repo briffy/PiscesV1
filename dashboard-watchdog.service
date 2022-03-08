@@ -1,0 +1,5 @@
+[Unit]
+Description=Dashboard Watchdog
+
+[Service]
+ExecStart=/home/pi/dashboard/watchdog.sh
