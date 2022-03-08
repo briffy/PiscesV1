@@ -92,9 +92,9 @@ rm -rf /etc/systemd/system/wifi-service-check.timer
 systemctl daemon-reload
 
 mkdir /home/pi/dashboard
-mkdir /home/pi/configs
-mkdir /home/pi/database
-mkdir /home/pi/logs
+mkdir /home/pi/dashboard/configs
+mkdir /home/pi/dashboard/database
+mkdir /home/pi/dashboard/logs
 
 chown -R root:root /home/pi/dashboard
 chmod -R 775 /home/pi/dashboard
