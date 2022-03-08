@@ -1,7 +1,8 @@
 #!/bin/bash
 systemctl stop nginx
 systemctl disable nginx
-apt-get remove nginx
+apt-get remove nginx --assume-yes
+apt-get autoremove --assume-yes
 
 rm -rf /var/dashboard
 rm -rf /etc/monitor-scripts
