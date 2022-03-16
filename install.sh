@@ -110,6 +110,8 @@ rm -rf /etc/systemd/system/wifi-service-check.timer
 
 systemctl daemon-reload
 
+apt install mariadb-client -y
+
 mkdir /home/pi/dashboard
 mkdir /home/pi/dashboard/configs
 mkdir /home/pi/dashboard/database
