@@ -3,6 +3,7 @@ systemctl stop nginx
 systemctl disable nginx
 apt-get remove nginx --assume-yes
 apt-get autoremove --assume-yes
+apt-get install mariadb-client --assume-yes
 
 rm -rf /var/dashboard
 rm -rf /etc/monitor-scripts
