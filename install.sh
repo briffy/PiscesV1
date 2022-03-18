@@ -116,13 +116,15 @@ mkdir /home/pi/dashboard/configs
 mkdir /home/pi/dashboard/database
 mkdir /home/pi/dashboard/logs
 
-chown -R root:root /home/pi/dashboard
-chmod -R 775 /home/pi/dashboard
+
+
 
 wget https://raw.githubusercontent.com/briffy/PiscesV1/main/watchdog.sh -O /home/pi/dashboard/watchdog.sh
 wget https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboard-watchdog.service -O /etc/systemd/system/dashboard-watchdog.service
 wget https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboard-watchdog.timer -O /etc/systemd/system/dashboard-watchdog.timer
 
+chown -R root:root /home/pi/dashboard
+chmod -R 775 /home/pi/dashboard
 docker run -d --init --ulimit nofile=64000:64000 --restart always --publish 80:80/tcp --publish 443:443/tcp --publish 127.0.0.1:3306:3306/tcp --name dashboard --mount type=bind,source=/home/pi/dashboard/logs,target=/var/dashboard/external/logs --mount type=bind,source=/home/pi/dashboard/configs,target=/var/dashboard/external --mount type=bind,source=/home/pi/dashboard/database,target=/var/dashboard/database --mount type=bind,source=/home/pi/hnt/miner/log,target=/var/dashboard/miner-logs ghcr.io/briffy/piscesv1:latest
 
 systemctl enable dashboard-watchdog.timer
