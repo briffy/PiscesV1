@@ -119,9 +119,9 @@ mkdir /home/pi/dashboard/logs
 
 
 
-wget https://raw.githubusercontent.com/briffy/PiscesV1/main/watchdog.sh -O /home/pi/dashboard/watchdog.sh
-wget https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboard-watchdog.service -O /etc/systemd/system/dashboard-watchdog.service
-wget https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboard-watchdog.timer -O /etc/systemd/system/dashboard-watchdog.timer
+wget --inet4-only https://raw.githubusercontent.com/briffy/PiscesV1/main/watchdog.sh -O /home/pi/dashboard/watchdog.sh
+wget --inet4-only https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboard-watchdog.service -O /etc/systemd/system/dashboard-watchdog.service
+wget --inet4-only https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboard-watchdog.timer -O /etc/systemd/system/dashboard-watchdog.timer
 
 chown -R root:root /home/pi/dashboard
 chmod -R 775 /home/pi/dashboard
