@@ -126,7 +126,7 @@ wget --inet4-only https://raw.githubusercontent.com/briffy/PiscesV1/main/dashboa
 chown -R root:root /home/pi/dashboard
 chmod -R 775 /home/pi/dashboard
 docker run -d --init --ulimit nofile=64000:64000 --restart always --publish 80:80/tcp --publish 443:443/tcp --publish 127.0.0.1:3306:3306/tcp --name dashboard --mount type=bind,source=/home/pi/dashboard/logs,target=/var/dashboard/external/logs --mount type=bind,source=/home/pi/dashboard/configs,target=/var/dashboard/external --mount type=bind,source=/home/pi/dashboard/database,target=/var/dashboard/database --mount type=bind,source=/home/pi/hnt/miner/log,target=/var/dashboard/miner-logs ghcr.io/briffy/piscesv1:latest
-
+chmod +x /home/pi/dashboard/watchdog.sh
 systemctl enable dashboard-watchdog.timer
 systemctl start dashboard-watchdog.timer
 systemctl start dashboard-watchdog.service
