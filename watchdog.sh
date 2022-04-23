@@ -142,7 +142,7 @@ if [[ $((timestamp - miner_update_lastupdated)) -ge 1 ]]; then
     echo "UPDATE updates SET current_version = '$currentversion' WHERE name ='miner';" | $database
   fi
 
-  latest_version=$(curl -s https://quay.io/api/v1/repository/team-helium/miner/tag/ | grep -Po 'miner-arm64_[0-9]+\.[0-9]+\.[0-9]+\.[^"]+_GA' | sort -n | tail -1)
+  latest_version=$(curl -s https://quay.io/api/v1/repository/team-helium/miner | grep -Po 'miner-arm64_[0-9]+\.[0-9]+\.[0-9]+\.[^"]+_GA' | sort -n | tail -1)
 
   if [[ $miner_update != $latest_version ]]; then
     echo "UPDATE updates SET latest_version = '$latest_version' WHERE name = 'miner';" | $database
